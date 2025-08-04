@@ -1,47 +1,47 @@
-Yelp Business Review Analytics
+# Yelp Business Review Analytics
+
 This end-to-end data analytics project focuses on processing and analyzing a large-scale Yelp dataset using Python, AWS S3, and Snowflake. The project includes data engineering, sentiment analysis, and advanced SQL-based business insights.
 
-Project Overview
-Processed over 7 million Yelp reviews (5GB) and business data (100MB) from JSON files.
+## Project Overview
 
-Built a scalable data pipeline using Python for data preparation and splitting.
+- Processed over 7 million Yelp reviews (5GB) and business data (100MB) from JSON files.
+- Built a scalable data pipeline using Python for data preparation and splitting.
+- Leveraged AWS S3 for cloud storage and Snowflake for data warehousing and querying.
 
-Leveraged AWS S3 for cloud storage and Snowflake for data warehousing and querying.
+## Tech Stack
 
-Tech Stack
-Python
+- Python  
+- AWS S3  
+- Snowflake  
+- SQL  
+- TextBlob (for sentiment analysis)
 
-AWS S3
+## Key Features
 
-Snowflake
+### Data Engineering & ETL
 
-SQL
+- Split large JSON files into smaller chunks using Python for efficient ingestion.
+- Uploaded data to AWS S3 and loaded it into Snowflake using VARIANT columns and the `COPY INTO` command.
+- Transformed JSON into structured tabular format using SQL queries and `CREATE TABLE AS SELECT`.
 
-TextBlob (for sentiment analysis)
+### Sentiment Analysis
 
-Key Features
-Data Engineering & ETL
-Split large JSON files into smaller chunks using Python for efficient ingestion.
+- Created a Python UDF in Snowflake using the TextBlob library.
+- Calculated sentiment polarity for each review and classified it as positive, neutral, or negative.
+- Appended sentiment results to the final cleaned review table.
 
-Loaded semi-structured data into Snowflake using VARIANT columns and the COPY INTO command.
+### SQL-Based Business Insights
 
-Converted JSON to tabular format using SQL transformations.
+- Unnested comma-separated categories using `SPLIT_TO_TABLE`.
+- Identified top users and most-reviewed businesses using `ROW_NUMBER()` and `QUALIFY`.
+- Calculated:
+  - Percentage of 5-star reviews
+  - Monthly review trends
+  - Most popular business categories
+  - Top businesses by positive sentiment reviews
 
-Sentiment Analysis
-Created a Python UDF in Snowflake using the TextBlob library.
+## Project Outcome
 
-Performed polarity-based sentiment classification (positive, neutral, negative).
+This project demonstrates strong proficiency in cloud data engineering, large-scale data processing, and sentiment analysis. It showcases the ability to build scalable, end-to-end analytics solutions using Python, Snowflake, and SQL.
 
-Added sentiment column to the final review table.
 
-SQL-Based Business Insights
-Unnested business categories using SPLIT_TO_TABLE.
-
-Identified top reviewers and most reviewed businesses using ROW_NUMBER() and QUALIFY.
-
-Calculated percentage of 5-star reviews, monthly review trends, and category popularity.
-
-Extracted top businesses by positive sentiment.
-
-Project Outcome
-This project demonstrates strong proficiency in cloud data engineering, large-scale data processing, sentiment analysis, and advanced SQL. It showcases the ability to build an end-to-end pipeline using modern data tools and techniques.
